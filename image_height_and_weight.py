@@ -1,6 +1,6 @@
 import cv2 as cv 
    
-# reading the heith and width of each place on an image with mouse click
+# reading the heith and width of each pixel on an image with mouse click
 def read_height_width():
         def onClick(event, x, y,flags, param):
            if event == cv.EVENT_LBUTTONDOWN:
