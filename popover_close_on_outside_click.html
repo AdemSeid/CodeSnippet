@@ -1,0 +1,30 @@
+<a href="#" title="Dismissible popover" id="popover-btn" data-bs-toggle="popover" data-bs-trigger="manual" data-bs-content="Click outside the popover to close it.">
+  Click me
+</a>
+
+<script>
+// Initialize the popover
+var popoverTriggerEl = document.getElementById('popover-btn');
+var popover = new bootstrap.Popover(popoverTriggerEl);
+
+// Toggle the popover visibility on click
+popoverTriggerEl.addEventListener('click', function () {
+  if (!document.querySelector('.popover')) { // Check if popover is not already shown
+    popover.show();
+  } else {
+    popover.hide();
+  }
+});
+
+// Add an event listener to close the popover when clicking outside
+document.addEventListener('click', function (e) {
+  // Check if the click was outside the popover or its trigger
+  if (!popoverTriggerEl.contains(e.target) && !document.querySelector('.popover')?.contains(e.target)) {
+    popover.hide();
+  }
+});
+</script>
+
+q
+
+
